@@ -4,6 +4,13 @@ def decimal_expansion(depth):
 	if depth == 0:
 		return 2
 	return 2 + (1/decimal_expansion(depth))
-depth = int(input("Depth : "))
-root_of_two = decimal_expansion(depth) - 1 # [1,2,2,2,...]
-print(root_of_two)
+depth = input("Depth : ")
+try: 
+	depth = int(depth)
+	if depth < 1: 
+		print("La profondeur est supérieure à 1.")
+	else:
+		root_of_two = decimal_expansion(depth) - 1 # [1,2,2,2,...]
+		print(root_of_two)
+except: 
+	print("La profondeur est un nombre.")
