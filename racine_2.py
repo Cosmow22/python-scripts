@@ -17,25 +17,27 @@ def decimal_expansion(depth: int) -> object:
 
 def uncaped_decimal_expansion(depth: int) -> object:
     denominator1 = decimal.Decimal("2.5")  # initialization
-    while depth != 0:
-        depth -= 1
-        denominator2 = TWO + (ONE / denominator1)
-        denominator1 = denominator2
-    return denominator2 - ONE
+    try:
+        while depth != 0:
+            depth -= 1
+            denominator2 = TWO + (ONE / denominator1)
+            denominator1 = denominator2
+        return denominator2 - ONE
+    except Exception as e:
+        print(e)
 
 
-depth = input("Depth : ")
+if __name__ == "__main__":
+    depth = input("Depth : ")
 
-try:
-    depth = int(depth)
-    if depth < 1:
-        raise ValueError
-except ValueError as e:
-    print("La profondeur est un nombre entier plus grand que 1.")
-else:
-    decimal.getcontext().prec = depth  #  sets maximum decimal values
-
-    if __name__ == "__main__":
+    try:
+        depth = int(depth)
+        if depth < 1:
+            raise ValueError
+    except ValueError as e:
+        print("La profondeur est un nombre entier plus grand que 1.")
+    else:
+        decimal.getcontext().prec = depth  #  sets maximum decimal values
         try:
             print("[WHILE FUNC]")
             t1 = time()
