@@ -1,4 +1,4 @@
-**Ce petit programme approxime le nombre racine carrée de deux, avec une fraction continue**
+**Ce petit programme approxime le nombre racine carrée de deux, avec une fraction continue.**
 
 $$ 2+\cfrac{1}{2+\cfrac{1}{2+\cfrac{1}{2+\cdots}}} $$
 
